@@ -7,14 +7,9 @@ override_dh_auto_clean:
 	rm -rf go
 
 override_dh_auto_build:
-	mkdir -p go/src/github.com/czerwonk go/pkg usr/bin
-	ln -sf $(CURDIR) go/src/github.com/czerwonk/bird_exporter
+	mkdir -p go/src go/pkg usr/bin
 	PATH=$$PATH:/usr/lib/go-1.8/bin GOPATH=$(CURDIR)/go \
-		go build \
-		-ldflags "-s -w -X $${GIT_IMPORT}.GitCommit=$${GIT_COMMIT} -X $${GIT_IMPORT}.GitDescribe=$${GIT_DESCRIBE}" \
-		-o usr/bin/journalbeat \
-		-tags "$${BUILD_TAGS}" \
-		github.com/czerwonk/bird_exporter
+		go get -u github.com/czerwonk/bird_exporter
 
 override_dh_auto_test:
 

@@ -1,1 +1,1 @@
-usr/bin/bird_exporter
+go/bin/bird_exporter usr/bin/
