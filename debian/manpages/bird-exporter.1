@@ -1,0 +1,57 @@
+BIRD_EXPORTER(1)                                              BIRD_EXPORTER(1)
+
+
+
+NNAAMMEE
+       bbiirrdd__eexxppoorrtteerr  -  Metric  exporter  for bird routing daemon to use with
+       Prometheus
+
+SSYYNNOOPPSSIISS
+       bbiirrdd__eexxppoorrtteerr [-version] [--help] [_a_r_g_s]
+
+DDEESSCCRRIIPPTTIIOONN
+       Bird protocol state exporter  for  bird  routing  daemon  to  use  with
+       prometheus.
+
+OOPPTTIIOONNSS
+       +o   --NN Disable actual publishing for testing
+
+       +o   --bbiirrdd..iippvv44 Get protocols from bird (default true)
+
+       +o   --bbiirrdd..iippvv66 Get protocols from bird6 (default true)
+
+       +o   --bbiirrdd..ssoocckkeett  ssttrriinngg Socket to communicate with bird routing daemon
+           (default "/var/run/bird.ctl")
+
+       +o   --bbiirrdd..ssoocckkeett66 ssttrriinngg Socket to communicate with bird6 routing  dae-
+           mon (default "/var/run/bird6.ctl")
+
+       +o   --lloogg..ffoorrmmaatt  vvaalluuee  Set  the  log target and format. Example: "log-
+           ger:syslog?appname=bob&local=7"    or     "logger:stdout?json=true"
+           (default "logger:stderr")
+
+       +o   --lloogg..lleevveell  vvaalluuee  Only  log  messages  with  the given severity or
+           above. Valid levels: [debug, info, warn, error, fatal]
+
+       +o   --vveerrssiioonn Print version information.
+
+       +o   --wweebb..lliisstteenn--aaddddrreessss ssttrriinngg Address on which to expose  metrics  and
+           web interface. (default ":9324")
+
+       +o   --wweebb..tteelleemmeettrryy--ppaatthh  ssttrriinngg  Path  under  which  to expose metrics.
+           (default "/metrics")
+
+       +o   --hh, ----hheellpp: Show this help message and exit
+
+
+
+CCOOPPYYRRIIGGHHTT
+       bird-exporter is subject to the terms of the MIT License
+
+SSEEEE AALLSSOO
+       bird-exporter  online  documentation  is  available  on  this   website
+       https://github.com/czerwonk/bird_exporter
+
+
+
+                                   July 2017                  BIRD_EXPORTER(1)

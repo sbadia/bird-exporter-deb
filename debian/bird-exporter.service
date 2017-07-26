@@ -1,0 +1,18 @@
+[Unit]
+Description=bird-exporter to prometheus
+After=network.target
+Documentation=man:bird_exporter(1)
+
+[Service]
+Type=simple
+WorkingDirectory=/var/lib/bird_exporter
+ExecStart=/usr/bin/bird_exporter -bird.socket='/var/run/bird/bird.ctl' -bird.ipv6=false -log.format='logger:stdout?json=true'
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=infinity
+User=bird
+Group=bird
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,26 @@
+Source: bird-exporter
+Section: utils
+Priority: optional
+Maintainer: Sebastien Badia <sbadia@debian.org>
+Homepage: https://github.com/czerwonk/bird_exporter
+Vcs-Git: https://github.com/clustree/bird-exporter-deb
+Vcs-Browser: https://github.com/clustree/bird-exporter-deb
+Standards-Version: 3.9.8
+Build-Depends: curl,
+               debhelper (>= 9),
+               dh-systemd,
+               git,
+               golang-go (>= 2:1.8) | golang-1.8,
+               libsystemd-dev,
+               pkg-config
+
+Package: bird-exporter
+Architecture: any
+Depends: adduser, ${misc:Depends}, ${shlibs:Depends}
+Description: Metric exporter for bird routing daemon to use with Prometheus
+ Bird protocol state exporter for bird routing daemon to use with prometheus.
+ Since bird_exporter uses the bird unix sockets, bird has to be installed on the
+ same mashine as bird_exporter. Also the user executing bird_exporter must have
+ permission to access the bird socket files.
+ .
+ This is the main package. It installs the bird-exporter binary.

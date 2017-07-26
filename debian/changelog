@@ -1,0 +1,5 @@
+bird-exporter (0.1.0-1~xenial1~clustree1) xenial; urgency=low
+
+  * Initial import.
+
+ -- Sebastien Badia <sbadia@debian.org>  Wed, 26 Jul 2017 15:24:24 +0200
